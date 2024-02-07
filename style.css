@@ -158,6 +158,11 @@ p {
     box-shadow: 0 0 0 10px #00800044, 0 0 50px green, 0 0 100px green;
 }
 
+.bubble span.first {
+    background-color: aqua;
+    box-shadow: 0 0 0 10px #4fc3dc44, 0 0 50px aqua, 0 0 100px aqua;
+}
+
 .bubble span:nth-child(even) {
     background-color: #ff2d75;
     box-shadow: 0 0 0 10px #ff2d7544, 0 0 50px #ff2d75, 0 0 100px #ff2d75;
@@ -172,6 +177,12 @@ p {
     background-color: green;
     box-shadow: 0 0 0 10px #00800044, 0 0 50px green, 0 0 100px green;
 }
+
+.bubble span.first:nth-child(even) {
+    background-color: #ff2d75;
+    box-shadow: 0 0 0 10px #ff2d7544, 0 0 50px #ff2d75, 0 0 100px #ff2d75;
+}
+
 
 @keyframes animate {
     0% {
