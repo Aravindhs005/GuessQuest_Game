@@ -1,4 +1,6 @@
 //to generate random number for the game
+var guessSpan = document.querySelectorAll('.bubble span');
+
 var min = 1;
 var max = 100;
 let count = 0;
@@ -30,6 +32,12 @@ function functionres() {
     count = 1;
     res = Math.floor(Math.random() * (max - min + 1)) + min;
     console.log(res);
+    
+    guessSpan.forEach(function (span) {
+        span.classList.remove('correct', 'wrong'); 
+        span.classList.add('first');
+    });
+
     document.getElementById("game").innerHTML = `<h2>GuessQuest</h2>
         <h4>We have selected a random number between 1 and 100. <br>See if you can guess it in 10 turns or fewer. <br>We'll tell you if your guess was too high or too low.</h4>
         <h3>Enter a guess:  <div id="breaks"><br></div><input type="number" id="guess">  <button onclick="myFunction()" id="submitu">submit guess</button></h3>
@@ -48,7 +56,7 @@ function myfunc() {
 
 //this function is for the game control and results
 function myFunction() {
-
+   
     if (count == 10) {
         document.getElementById("submitu").disabled = true;
         document.getElementById("guess").disabled = true;
@@ -59,7 +67,7 @@ function myFunction() {
 
     }
     else {
-
+        guessSpan = document.querySelectorAll('.bubble span');
         var a = parseInt(document.getElementById("guess").value);
         if (isNaN(a)) {
             document.getElementById("results").innerHTML = "You must Enter a value";
@@ -68,21 +76,19 @@ function myFunction() {
         count = count + 1;
         document.getElementById("guessings").innerHTML += a + " ";
         document.getElementById("results").style.display = "block";
-        var guessSpan = document.querySelectorAll('.bubble span');
-
+        // var guessSpan = document.querySelectorAll('.bubble span');
         if (a > res) {
-
-            document.getElementById("results").innerHTML = "The given value is greater than the expected value";
-
             guessSpan.forEach(function (span) {
+                span.classList.remove('first'); 
                 span.classList.add('wrong');
             });
-
-
+            document.getElementById("results").innerHTML = "The given value is greater than the expected value";
         }
         else if (a < res) {
             document.getElementById("results").innerHTML = "The given value is lesser than the expected value";
             guessSpan.forEach(function (span) {
+                
+                span.classList.remove('first'); 
                 span.classList.add('wrong');
             });
 
@@ -90,9 +96,10 @@ function myFunction() {
         else {
             document.getElementById("results").innerHTML = "Correct Answer";
             guessSpan.forEach(function (span) {
+                
+                span.classList.remove('first'); 
                 span.classList.add('correct');
             });
-
             document.getElementById("submitu").style.color = "white";
             document.getElementById("submitu").style.backgroundColor = "#ffffff44";
             document.getElementById("submitu").style.cursor = "not-allowed";
