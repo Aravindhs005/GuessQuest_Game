@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Honk', system-ui;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: rgb(34, 35, 50);
+}
+
+.container {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #333;
+    color: #fff;
+    width: calc(100% - 500px);
+    padding: 10px;
+}
+
+.title {
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 100px;
+}
+
+h2 {
+    position: relative;
+    font-size: 8vw;
+    color: aqua;
+}
+
+h1 {
+    position: relative;
+    font-size: 3vw;
+    color: aqua;
+}
+
+h4 {
+    position: relative;
+    font-size: 1vw;
+    color: rgb(186, 185, 185);
+}
+
+h3 {
+    position: relative;
+    font-size: 2vw;
+    color: #ff2d75;
+    margin-top: 10vh;
+}
+
+input {
+    width: 100px;
+    padding: 10px;
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #4fc3dc44;
+    font-size: 18px;
+    outline: none;
+
+}
+
+p {
+    font-size: 3vw;
+    color: #ff2d75;
+}
+
+#submitu {
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    color: #ff2d75;
+    background-color: #4fc3dc44;
+    cursor: pointer;
+    position: relative;
+    text-transform: uppercase;
+    z-index: 0;
+    border-radius: 12px;
+}
+
+#submitu:hover {
+    color: aqua;
+    background-color: #ff2d7544;
+    box-shadow: 0 0 0 1px #4fc3dc44, 0 0 5px aqua, 0 0 1px aqua;
+}
+
+#buttonu {
+    padding: 15px 40px;
+    border: none;
+    outline: none;
+    color: #ff2d75;
+    background-color: #4fc3dc44;
+    font-weight: bolder;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+}
+
+#buttonu:hover {
+    color: aqua;
+    background-color: #ff2d7544;
+    box-shadow: 0 0 0 1px #4fc3dc44, 0 0 50px aqua, 0 0 10px aqua;
+}
+
+#breaks {
+    display: none;
+}
+
+#breaks2 {
+    display: none;
+}
+
+.bubble {
+    position: relative;
+    display: flex;
+}
+
+.bubble span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: whitesmoke;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: aqua;
+    margin: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44, 0 0 50px aqua, 0 0 100px aqua;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(100s/var(--i));
+}
+
+.bubble span.wrong {
+    background-color: red;
+    box-shadow: 0 0 0 10px #ff2d7544, 0 0 50px red, 0 0 100px red;
+}
+
+.bubble span.correct {
+    background-color: green;
+
+    box-shadow: 0 0 0 10px #00800044, 0 0 50px green, 0 0 100px green;
+}
+
+.bubble span:nth-child(even) {
+    background-color: #ff2d75;
+    box-shadow: 0 0 0 10px #ff2d7544, 0 0 50px #ff2d75, 0 0 100px #ff2d75;
+}
+
+.bubble span.wrong:nth-child(even) {
+    background-color: red;
+    box-shadow: 0 0 0 10px #ff2d7544, 0 0 50px red, 0 0 100px red;
+}
+
+.bubble span.correct:nth-child(even) {
+    background-color: green;
+    box-shadow: 0 0 0 10px #00800044, 0 0 50px green, 0 0 100px green;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(100vh);
+    }
+
+    100% {
+        transform: translateY(-10vh);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .bubble span {
+        margin: 5px 0;
+        width: 20px;
+        height: 20px;
+    }
+
+    .title {
+        margin-left: 50px;
+        margin-top: 150px;
+    }
+
+    #buttonu {
+        margin-top: 150px;
+    }
+
+    .footer {
+        width: 50%;
+    }
+
+    h1 {
+        font-size: 3vh;
+    }
+
+    #game {
+        margin-left: 50px;
+    }
+
+    h4 {
+        font-size: 8px;
+    }
+
+    h3 {
+        font-size: 15px;
+    }
+
+    #breaks {
+        margin-top: -40px;
+        display: block;
+    }
+
+    #breaks2 {
+        margin-top: 10px;
+        display: block;
+    }
+
+    #submitu {
+        margin-top: 50px;
+        padding: 5px 5px;
+        font-size: 10px;
+        text-transform: uppercase;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 800px) {
+    .bubble span {
+        width: 25px;
+        height: 25px;
+    }
+
+    .footer {
+        width: calc(100% - 200px);
+    }
+
+}
+
+.game {
+    display: none;
+    margin-left: 70px;
+    margin-top: 10vh;
+}
+
+.title {
+    display: block;
+}
+
+#results {
+    margin-top: 5vh;
+    color: aqua;
+}

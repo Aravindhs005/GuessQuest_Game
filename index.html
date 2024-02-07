@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="icon.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Honk&family=Oswald:wght@300&family=Rubik:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <title>GuessQuest</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Bubbles -->
+        <div class="bubble">
+            <span id="randomnum1" style="--i:11;"></span>
+            <span id="randomnum2" style="--i:15;"></span>
+            <span id="randomnum3" style="--i:20;"></span>
+            <span id="randomnum4" style="--i:25;"></span>
+            <span id="randomnum5" style="--i:15;"></span>
+            <span id="randomnum6" style="--i:20;"></span>
+        </div>
+        <!-- Home container -->
+        <div class="title" id="title">
+            <h2>GuessQuest</h2>
+            <p>The Number Hunt</p>
+            <br><br>
+            <button onclick="myfunc()" id="buttonu">START</button>
+
+            <div class="footer">
+                Created by Aravindh_S @ 2024
+            </div>
+        </div>
+
+        <!-- Game container  -->
+        <div class="game" id="game">
+            <h2>GuessQuest</h2>
+            <h4>We have selected a random number between 1 and 100. <br>See if you can guess it in 10 turns or fewer.
+                <br>We'll tell you if your guess was too high or too low.</h4>
+            <h3>Enter a guess: <div id="breaks"><br></div><input type="number" id="guess" required> <button
+                    onclick="myFunction()" id="submitu">submit guess</button></h3>
+            <h3 id="guessings">Previous Guesses: <div id="breaks2"><br> </h3>
+            <div id="results"></div>
+            <br>
+            <button onclick="functionres()" id="submitu">Restart</button>
+            <div class="footer">
+                Created by Aravindh_S @ 2024
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
